@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>天天盈球 · 稳定入口与数据说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fafbfc;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      color: #1e2a3a;
+      padding: 2.4rem 1rem 4rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .page {
+      max-width: 680px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* 极简开场 */
+    .opening {
+      margin-top: 2.8rem;
+      letter-spacing: 0.01em;
+    }
+
+    .opening .short-line {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #0b1c2e;
+      line-height: 1.4;
+      margin-bottom: 0.4rem;
+    }
+
+    .opening .short-line small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #5b6f82;
+      margin-left: 0.35rem;
+    }
+
+    .opening .sub-meta {
+      font-size: 1.05rem;
+      color: #2c3e50;
+      margin-top: 0.3rem;
+      border-left: 4px solid #cbd5e0;
+      padding-left: 1rem;
+    }
+
+    /* 承接段落 */
+    .bridge {
+      margin: 2.8rem 0 2.2rem;
+      padding: 1.6rem 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .bridge p {
+      font-size: 1.02rem;
+      margin-bottom: 1.2rem;
+      color: #1e293b;
+    }
+
+    .bridge p:last-child {
+      margin-bottom: 0;
+    }
+
+    .bridge a {
+      color: #1e5a7a;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease;
+      font-weight: 500;
+    }
+
+    .bridge a:hover {
+      color: #0e3b54;
+      text-decoration-thickness: 2px;
+    }
+
+    /* 特点列表 — 极简卡片风格 */
+    .feature-list {
+      margin: 2.4rem 0 2.8rem;
+    }
+
+    .feature-list .list-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #0f2a3b;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.01em;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      padding: 0.9rem 0.75rem;
+      margin-bottom: 0.6rem;
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.02);
+      transition: background 0.15s;
+    }
+
+    .feature-item:hover {
+      background: #f1f5f9;
+    }
+
+    .feature-item .num {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #5d7b96;
+      min-width: 1.8rem;
+      line-height: 1.5;
+    }
+
+    .feature-item .desc {
+      flex: 1;
+      font-size: 0.98rem;
+      color: #1e2a3a;
+      line-height: 1.55;
+    }
+
+    .feature-item .desc strong {
+      font-weight: 600;
+      color: #1a3a4f;
+    }
+
+    /* 温和结尾 */
+    .closing {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e2e8f0;
+      font-size: 0.98rem;
+      color: #3d4f62;
+    }
+
+    .closing p {
+      margin-bottom: 0.8rem;
+    }
+
+    .closing a {
+      color: #1e5a7a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.15s;
+    }
+
+    .closing a:hover {
+      color: #0b2d42;
+    }
+
+    .closing .note {
+      display: inline-block;
+      background: #edf2f7;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: #2d465a;
+      margin-top: 0.5rem;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 500px) {
+      body {
+        padding: 1.6rem 1rem 3rem;
+      }
+      .opening .short-line {
+        font-size: 1.3rem;
+      }
+      .feature-item {
+        padding: 0.7rem 0.5rem;
+      }
+      .bridge p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .opening {
+        margin-top: 4rem;
+      }
+    }
+
+    /* 极简辅助 */
+    .soft-spacer {
+      height: 0.6rem;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 开场短句 知识型入口说明 -->
+  <div class="opening">
+    <div class="short-line">
+      进入信息流的稳定锚点<span class="sub-meta"> · 页面说明</span>
+    </div>
+    <div class="sub-meta">
+      对一个持续运作的平台而言，入口的可靠性往往优先于界面的华丽。理解结构，才能更高效地使用它。
+    </div>
+  </div>
+
+  <!-- 承接段落：从稳定入口与页面说明展开 -->
+  <div class="bridge">
+    <p>
+      在长期使用任何体育数据服务的过程中，用户最在意的并非一时的视觉冲击，而是每次访问时都能顺利抵达、快速定位所需内容。<a href="https://beta-ttyingqiu.com">天天盈球</a>作为一款聚焦于赛事信息与数据整合的工具，它的页面设计遵循一条基本原则：降低认知负荷，让信息层级本身成为指引。无论是赛程预览、深度数据还是实时变动，界面都尽可能保持一致的叙事逻辑。
+    </p>
+    <p>
+      这就意味着，当你打开它的页面时，视觉重心会自然落在数据模块与导航入口上。没有过度装饰，也没有干扰性动效——每一个区块的留白都在告诉你：这里就是你要找的信息位置。从使用者的角度来看，这种稳定感减少了重复适应成本，尤其适合需要频繁查阅比赛动向的用户。
+    </p>
+  </div>
+
+  <!-- 特点列表：基于稳定入口与信息说明的提炼 -->
+  <div class="feature-list">
+    <div class="list-title">· 结构与交互的几个侧面</div>
+
+    <div class="feature-item">
+      <span class="num">01</span>
+      <span class="desc"><strong>入口一致性</strong> —— 主要功能模块的入口位置长期保持固定，不随版本迭代而频繁挪动。无论从哪个设备进入，核心路径的肌肉记忆始终有效。</span>
+    </div>
+
+    <div class="feature-item">
+      <span class="num">02</span>
+      <span class="desc"><strong>克制的前置信息</strong> —— 首页不堆叠大量排行榜或无关摘要，而是把说明性文字、数据摘要和操作入口分层呈现。每个模块都配有简短的功能提示，帮助你理解当前区块的作用。</span>
+    </div>
+
+    <div class="feature-item">
+      <span class="num">03</span>
+      <span class="desc"><strong>页面节奏与留白</strong> —— 内容区块之间保留充足间距，重要标题与数据卡片使用清晰的字重和色彩区分。这种节奏感让浏览变成一种自然扫视，而非密集阅读。</span>
+    </div>
+
+    <div class="feature-item">
+      <span class="num">04</span>
+      <span class="desc"><strong>响应式下的阅读韧性</strong> —— 窄屏下依然保持单栏布局，文字大小与点击区域不因屏幕缩小而过度拥挤。设计优先确保信息的可读性与可触达性。</span>
+    </div>
+  </div>
+
+  <!-- 温和结尾，包含 FAQ 摘要式说明 -->
+  <div class="closing">
+    <p>
+      如果你正在寻找一个值得长期关注的数据页面，不妨先花几分钟熟悉它的结构骨架。从首页的导航栏到底部分类标签，每个元素都承担着明确的指向功能。<a href="https://beta-ttyingqiu.com">天天盈球</a>的设计思路更接近一本工具书：目录清晰，正文克扣，索引直接。
+    </p>
+    <p>
+      常见疑问摘要：页面是否包含实时数据？是的，但实时模块通常位于次级页面，首页更侧重于提供概览与快速跳转。是否支持自定义布局？当前版本优先保证统一体验，自定义功能有限，但核心信息路径已足够直接。
+    </p>
+    <p>
+      最后想说的是，一个好的入口并不需要喧哗，稳定、可预期、低摩擦——这些特质组合起来，就是最扎实的用户体验。
+    </p>
+    <span class="note">页面说明 · 持续观察 · 信息优先</span>
+  </div>
+
+  <!-- 极简装饰分隔（仅用于视觉节奏） -->
+  <div class="soft-spacer"></div>
+</div>
+</body>
+</html>
