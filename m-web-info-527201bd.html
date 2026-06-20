@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息索引 · ng体育</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #fce8d7 0%, #f9ddc5 40%, #f2cfb1 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            padding: 24px 20px 60px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #2e241c;
+            line-height: 1.6;
+        }
+
+        .page {
+            max-width: 1120px;
+            width: 100%;
+        }
+
+        /* 顶部导航 */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 248, 242, 0.7);
+            backdrop-filter: blur(3px);
+            padding: 14px 28px;
+            border-radius: 64px;
+            box-shadow: 0 6px 18px rgba(150, 90, 40, 0.10);
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .nav-brand {
+            font-weight: 520;
+            font-size: 1.35rem;
+            letter-spacing: 0.02em;
+            color: #7f5c3b;
+            background: #f7ede4;
+            padding: 2px 16px 2px 14px;
+            border-radius: 32px;
+            line-height: 2;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4f3c2b;
+            font-weight: 450;
+            padding: 6px 14px;
+            border-radius: 40px;
+            background: transparent;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            background: #dfc9b4;
+            color: #2a1f17;
+            box-shadow: 0 2px 6px rgba(90, 60, 35, 0.08);
+        }
+
+        /* hero 区块 */
+        .hero {
+            background: rgba(255, 250, 244, 0.75);
+            backdrop-filter: blur(2px);
+            border-radius: 48px;
+            padding: 42px 40px 48px;
+            margin-bottom: 40px;
+            box-shadow: 0 12px 28px rgba(120, 72, 38, 0.08);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 540;
+            letter-spacing: -0.01em;
+            color: #4d3320;
+            margin-bottom: 14px;
+            line-height: 1.2;
+        }
+
+        .hero .sub {
+            font-size: 1.15rem;
+            color: #604934;
+            max-width: 640px;
+            margin: 0 auto 24px;
+            background: #f3e2d3;
+            padding: 8px 18px;
+            border-radius: 60px;
+            display: inline-block;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin: 0 auto 16px;
+            color: #3d2d21;
+        }
+
+        .hero .intro-link {
+            margin-top: 16px;
+            font-size: 1.05rem;
+        }
+
+        .hero .intro-link a {
+            color: #8f5f39;
+            background: #f5e6d9;
+            padding: 6px 18px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 480;
+            transition: background 0.15s, color 0.15s;
+            border: 1px solid #dbbc9f;
+        }
+
+        .hero .intro-link a:hover {
+            background: #e3cdb9;
+            color: #3b291c;
+            border-color: #b69374;
+        }
+
+        /* 三个场景卡片 */
+        .scene-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin-bottom: 48px;
+            justify-content: center;
+        }
+
+        .scene-card {
+            flex: 1 1 280px;
+            background: #fffaf5;
+            border-radius: 32px;
+            padding: 30px 24px 30px 28px;
+            box-shadow: 0 8px 20px rgba(130, 80, 40, 0.06);
+            transition: transform 0.15s, box-shadow 0.2s;
+            border: 1px solid #f0decb;
+        }
+
+        .scene-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 28px rgba(120, 75, 35, 0.08);
+        }
+
+        .scene-card h3 {
+            font-size: 1.3rem;
+            font-weight: 510;
+            color: #5b4030;
+            margin-bottom: 8px;
+            border-left: 4px solid #dbb695;
+            padding-left: 14px;
+        }
+
+        .scene-card p {
+            color: #3f3227;
+            font-size: 0.95rem;
+            margin-top: 8px;
+        }
+
+        .scene-card .tag {
+            display: inline-block;
+            margin-top: 16px;
+            background: #efe3d6;
+            padding: 4px 16px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #5c4532;
+        }
+
+        /* 常见说明 + 精简FAQ */
+        .faq-section {
+            background: rgba(255, 248, 238, 0.7);
+            backdrop-filter: blur(2px);
+            border-radius: 44px;
+            padding: 36px 32px 40px;
+            margin-bottom: 28px;
+            box-shadow: 0 6px 16px rgba(110, 70, 35, 0.06);
+        }
+
+        .faq-section h2 {
+            font-size: 1.6rem;
+            font-weight: 520;
+            color: #4c3624;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .faq-item {
+            padding: 16px 0 14px;
+            border-bottom: 1px solid #e7d5c2;
+        }
+
+        .faq-item:last-of-type {
+            border-bottom: 0;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 520;
+            color: #3f2d1d;
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+
+        .faq-item p {
+            color: #413125;
+            font-size: 0.95rem;
+            margin-right: 16px;
+        }
+
+        .faq-item a {
+            color: #8a603f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #c9aa8a;
+            font-weight: 470;
+        }
+
+        .faq-item a:hover {
+            color: #4d311d;
+            text-decoration-color: #7b5436;
+        }
+
+        .footnote {
+            margin-top: 36px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #5e4b39;
+            background: rgba(247, 233, 220, 0.6);
+            padding: 14px 18px;
+            border-radius: 60px;
+        }
+
+        .footnote a {
+            color: #7a583e;
+            text-decoration: none;
+            border-bottom: 1px dotted #b18d6e;
+            font-weight: 460;
+        }
+
+        .footnote a:hover {
+            color: #3b2719;
+            border-bottom: 1px solid #906d4d;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 18px 12px 40px;
+            }
+            .hero {
+                padding: 32px 20px 36px;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .navbar {
+                padding: 12px 18px;
+                border-radius: 36px;
+            }
+            .nav-links a {
+                font-size: 0.85rem;
+                padding: 4px 10px;
+            }
+            .faq-section {
+                padding: 28px 18px 30px;
+            }
+            .faq-section h2 {
+                font-size: 1.3rem;
+            }
+            .scene-card {
+                flex: 1 1 100%;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero .sub {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- 顶部导航 -->
+    <nav class="navbar">
+        <span class="nav-brand">📋 资料整理</span>
+        <div class="nav-links">
+            <a href="#intro">概览</a>
+            <a href="#scenes">场景</a>
+            <a href="#faq">常见说明</a>
+            <a href="#note">索引</a>
+        </div>
+    </nav>
+
+    <!-- hero 介绍 -->
+    <section class="hero" id="intro">
+        <h1>信息索引 · 了解 ng体育</h1>
+        <div class="sub">从资料整理与内容归档的角度出发</div>
+        <p>
+            在浏览和记录各类运动相关资讯的过程中，我们常会遇到信息分散、归类不易的情况。
+            为了方便查阅，这里将一些常见场景、功能概念和条目说明做了温和的汇总。
+            以下内容围绕<strong> ng体育 </strong>这一主题展开，侧重框架介绍与使用参考。
+        </p>
+        <div class="intro-link">
+            如果你想进一步查看原始信息源，可以了解 <a href="https://m-web-ngsports.com">ng体育</a> 相关页面。
+        </div>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <section id="scenes" class="scene-grid">
+        <div class="scene-card">
+            <h3>📂 赛事资料查阅</h3>
+            <p>在关注比赛动态时，常需要快速检索赛程、队伍信息或历史记录。该板块提供分类式的条目整理，便于按联赛、项目或时间线查找。</p>
+            <span class="tag">信息索引</span>
+        </div>
+        <div class="scene-card">
+            <h3>📊 数据与内容归档</h3>
+            <p>针对比分、统计或图文内容，采用模块化卡片排列，辅以标签和简注。适合作为个人笔记或轻量资料库的参考结构。</p>
+            <span class="tag">整理参考</span>
+        </div>
+        <div class="scene-card">
+            <h3>📎 功能条目说明</h3>
+            <p>一些常见界面元素、按钮逻辑或导航划分，通过简短的描述帮助新接触的用户快速建立认知。不涉及复杂教程，以清晰为主。</p>
+            <span class="tag">条目笔记</span>
+        </div>
+    </section>
+
+    <!-- 常见说明 + FAQ 摘要 -->
+    <section class="faq-section" id="faq">
+        <h2>📌 常见说明</h2>
+
+        <div class="faq-item">
+            <strong>▎ 关于内容归类</strong>
+            <p>所有模块均基于静态资料整理，未做实时数据接入。每个条目代表一类信息的概括，可作为进一步查阅的起点。如果你希望查看更完整的页面结构，可以浏览 <a href="https://m-web-ngsports.com">ng体育</a> 所提供的布局示例。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>▎ 场景模块的用途</strong>
+            <p>上方三个卡片分别对应赛事类、数据类、功能说明类三个方向。它们的设计是为了体现信息组织方式，不绑定特定平台或服务。实际应用中可根据需求调整分类粒度。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>▎ 链接与参考说明</strong>
+            <p>本站仅作为信息索引页，不存储用户数据。文内出现的链接指向外部资料页，例如 <a href="https://m-web-ngsports.com">ng体育</a> 这一条目，仅为内容示例，不含推广意图。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>▎ 阅读提示</strong>
+            <p>所有描述均保留客观语气，无诱导性表述。建议读者根据自身需求筛选有效信息，并结合官方资料或可靠来源进行交叉确认。</p>
+        </div>
+    </section>
+
+    <!-- 底部 footnote -->
+    <div class="footnote" id="note">
+        <span>📎 索引摘要 · 内容方向为资料整理与场景列举 · 了解更多可参考 </span>
+        <a href="https://m-web-ngsports.com">ng体育</a>
+        <span> 相关页面 · 本页仅作介绍用途</span>
+    </div>
+
+</div>
+
+</body>
+</html>
