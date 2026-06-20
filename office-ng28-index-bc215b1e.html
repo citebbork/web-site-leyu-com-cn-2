@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ng28 · 知识库入口</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f7f4ed;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #2b2b2b;
+      line-height: 1.7;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .container {
+      max-width: 840px;
+      margin: 0 auto;
+      background-color: #fcfaf5;
+      border-radius: 28px;
+      padding: 2.5rem 2.8rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02), 0 1px 4px rgba(0, 0, 0, 0.04);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin: 0 0 0.6rem 0;
+      color: #1f1f1f;
+    }
+
+    .byline {
+      font-size: 1rem;
+      color: #6b6b6b;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid #e5dfd5;
+      padding-bottom: 1.2rem;
+    }
+
+    .hero-tag {
+      background: #eae4d9;
+      padding: 1.4rem 1.8rem;
+      border-radius: 20px;
+      margin-bottom: 2.2rem;
+    }
+
+    .hero-tag p {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 550;
+      margin: 2.6rem 0 1.2rem 0;
+      border-left: 5px solid #c4b29b;
+      padding-left: 1rem;
+      color: #2e2e2e;
+    }
+
+    .grid-dir {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 1.2rem 0 1.8rem 0;
+    }
+
+    .dir-card {
+      background: #f3efe7;
+      padding: 1.2rem 1.2rem 1rem 1.2rem;
+      border-radius: 18px;
+      transition: background 0.15s ease;
+    }
+
+    .dir-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: #1f1f1f;
+    }
+
+    .dir-card p {
+      font-size: 0.95rem;
+      color: #4f4f4f;
+      margin: 0.2rem 0 0 0;
+    }
+
+    .callout-box {
+      background: #f0ede4;
+      border-left: 6px solid #a2947d;
+      border-radius: 14px;
+      padding: 1.3rem 1.8rem;
+      margin: 2rem 0 2rem 0;
+    }
+
+    .callout-box p {
+      margin: 0.25rem 0;
+    }
+
+    .faq-mini {
+      margin: 2.2rem 0 1.2rem 0;
+    }
+
+    .faq-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+      color: #1f1f1f;
+    }
+
+    .faq-item p {
+      color: #3c3c3c;
+      margin: 0;
+    }
+
+    .related-links {
+      margin: 2.5rem 0 1rem 0;
+      border-top: 1px solid #ded9cf;
+      padding-top: 2rem;
+    }
+
+    .related-links span {
+      display: inline-block;
+      background: #ede8de;
+      padding: 0.25rem 0.9rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      margin-right: 0.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .in-text-link {
+      color: #3f372f;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      text-decoration-color: #b8aa96;
+      font-weight: 500;
+      transition: color 0.1s;
+    }
+
+    .in-text-link:hover {
+      color: #1c1c1c;
+      text-decoration-color: #7e6c58;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e2dbcf;
+      margin: 1.8rem 0;
+    }
+
+    .footer-note {
+      font-size: 0.9rem;
+      color: #78726a;
+      margin-top: 2rem;
+      text-align: left;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 1.2rem; }
+      .container { padding: 1.8rem; }
+      h1 { font-size: 1.9rem; }
+      .section-title { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>关于 ng28 · 一份简明知识库</h1>
+    <div class="byline">从使用者的角度 · 快速识别与导航</div>
+
+    <div class="hero-tag">
+      <p>第一次接触 <a href="https://office-ng28.com" class="in-text-link">ng28</a> 时，你可能会好奇：这个网站主要做什么？为了方便判断，我们整理了典型板块和常见信息点，帮你在几分钟内建立整体印象。</p>
+    </div>
+
+    <!-- 目录感布局 -->
+    <div class="section-title">📂 主要信息区域</div>
+    <div class="grid-dir">
+      <div class="dir-card">
+        <h3>服务概览</h3>
+        <p>功能定位、适用的场景、基础流程说明</p>
+      </div>
+      <div class="dir-card">
+        <h3>平台动态</h3>
+        <p>更新日志、内容调整、近期变动摘要</p>
+      </div>
+      <div class="dir-card">
+        <h3>操作指引</h3>
+        <p>常见功能路径、设置项、界面说明</p>
+      </div>
+      <div class="dir-card">
+        <h3>常见疑问</h3>
+        <p>使用前的高频问题，以及初步解答方向</p>
+      </div>
+    </div>
+
+    <!-- 说明区 -->
+    <div class="section-title">📖 说明区 · 网站用途速写</div>
+    <p>据现有公开信息与用户反馈，<strong>ng28</strong> 是一类提供在线交互功能的平台，涉及内容展示、用户操作与信息管理。不同身份的用户可能会关注不同模块：新用户往往先了解注册与基础权限，而有经验的使用者则更关注功能效率与数据呈现。无论你属于哪一类，建议从首页的导航栏或快速入口开始浏览，通常会找到对应分类。</p>
+    <p style="margin-top: 0.8rem;">如果你希望直接访问网站，可以记住地址 <a href="https://office-ng28.com" class="in-text-link">ng28</a>。域名中的 “office” 暗示其偏向办公或管理类场景，页面结构也倾向于工具型布局，而非纯粹的内容展示。</p>
+
+    <!-- 提示区 -->
+    <div class="callout-box">
+      <p><strong>💡 提示：</strong>初次访问时，注意页面上方的导航分区。很多常用功能会放在显眼位置，例如 “仪表盘”“设置”“帮助” 等入口。如果某个页面加载稍慢，可以尝试刷新或检查网络环境。</p>
+      <p style="margin-top: 0.4rem;">另外，部分操作可能需要登录或身份验证，提前准备好账户信息会更流畅。</p>
+    </div>
+
+    <!-- 相关信息区 + FAQ 摘要 -->
+    <div class="section-title">❓ 相关信息 · FAQ 摘要</div>
+    <div class="faq-mini">
+      <div class="faq-item">
+        <strong>「需要下载额外软件吗？」</strong>
+        <p>通常无需安装，主流浏览器即可直接访问 <a href="https://office-ng28.com" class="in-text-link">ng28</a>。部分高级功能可能依赖浏览器特性，建议保持浏览器为较新版本。</p>
+      </div>
+      <div class="faq-item">
+        <strong>「移动端体验怎么样？」</strong>
+        <p>网站已做响应式适配，手机和平板均能正常浏览。但某些复杂表格或操作页面，在较大屏幕上操作会更顺手。</p>
+      </div>
+      <div class="faq-item">
+        <strong>「可以找到历史通知或公告吗？」</strong>
+        <p>网站内通常设有“公告”或“消息”栏目，历史记录可在对应板块按时间筛选。部分页面底部也可能保留归档入口。</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- 相关链接 / 标签式索引 -->
+    <div class="related-links">
+      <span>🔖 平台指南</span>
+      <span>🔖 新手起步</span>
+      <span>🔖 功能索引</span>
+      <span>🔖 常见术语</span>
+      <span>🔖 联系支持</span>
+    </div>
+    <p style="font-size: 0.95rem; color: #4b4640;">以上标签仅为内容方向示意，具体分类请以 <a href="https://office-ng28.com" class="in-text-link">ng28</a> 站内实际栏目为准。</p>
+
+    <div class="footer-note">
+      — 本页为独立知识库入口页，内容基于常见使用场景整理，不构成官方说明。
+    </div>
+
+  </div>
+</body>
+</html>
